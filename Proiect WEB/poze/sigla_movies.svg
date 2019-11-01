@@ -1,0 +1,17 @@
+<svg width="500" height="250" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <g>
+  <title>background</title>
+  <rect fill="#333333" id="canvas_background" height="252" width="502" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000" id="svg_1" height="49.999999" width="359" y="-0.008522" x="143.500001" stroke-width="0" fill="#0fffff"/>
+  <rect stroke="#000" id="svg_3" height="49.999999" width="359" y="201.991478" x="143.500001" stroke-width="0" fill="#0fffff"/>
+  <rect stroke="#000" id="svg_4" height="49.999999" width="359" y="98.991478" x="-300.499999" stroke-width="0" fill="#e559d2"/>
+  <text style="cursor: move;" font-weight="normal" stroke="#000" transform="matrix(3.693859815597534,0,0,4.482244968414307,-367.7118648290634,-446.6523272767663) " xml:space="preserve" text-anchor="start" font-family="'Courier New', Courier, monospace" font-size="24" id="svg_5" y="132.81591" x="125.4005" stroke-opacity="null" stroke-width="0" fill="#e559d2">Movies</text>
+ </g>
+</svg>
