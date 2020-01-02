@@ -1,0 +1,17 @@
+<svg width="200" height="150" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect x="-1" y="-1" width="202" height="152" id="canvas_background" fill="#900c3f"/>
+  <g id="canvasGrid" display="none">
+   <rect id="svg_1" width="100%" height="100%" x="0" y="0" stroke-width="0" fill="url(#gridpattern)"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text fill="#ffc300" stroke-width="0" x="78.623588" y="74.776157" id="svg_2" font-size="24" font-family="'Courier New', Courier, monospace" text-anchor="start" xml:space="preserve" transform="matrix(7.095960564745636,0,0,6.67670612353326,-551.6411766127845,-382.98828126683566) " stroke="#000">K</text>
+  <text fill="#ff5733" stroke-width="0" stroke-opacity="null" x="126.768953" y="194" id="svg_3" font-size="24" font-family="'Courier New', Courier, monospace" text-anchor="start" xml:space="preserve" transform="matrix(6.529807199347809,0,0,5.786841430692358,-818.1127988785008,-1012.9708244554532) " stroke="#000" font-weight="normal" font-style="normal">S</text>
+  <text fill="#ffc300" stroke-width="0" x="108.394621" y="112.009671" id="svg_4" font-size="24" font-family="'Courier New', Courier, monospace" text-anchor="start" xml:space="preserve" transform="matrix(2.056658850801341,0,0,2.16970133079883,-118.26405979982906,-127.86727600202255) " stroke="null" font-weight="bold">ing</text>
+ </g>
+</svg>

@@ -4,21 +4,32 @@
 <head>
     <title>Biography </title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" id="id_mod">
+    <script src="change_color.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
+<body onload="checkCookies()">
 
     <div class="header">
 
         <div class="title_box">
 
-            <a href="index.html"><img class="logo" src="poze/sigla.svg" alt="sigla">
+            <a href="index.html"><img class="logo" id="img_sigla" src="poze/sigla.svg" alt="sigla">
             </a>
 
         </div>
         <div class="menu">
+            <div class="dropdown">
+                <div>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="dropdown-content">
+                    <button class="style_button dropbtn" id="buton_light_mode" onClick='schimb_light()'>Light</button>
+                    <button class="style_button dropbtn" id="red_mode" onClick='schimb_red()'>Red</button>
+
+                </div>
+            </div>
             <div class="dropdown">
                 <div>
                     <a href="biography.html"><button class="style_button dropbtn">Biografie</button></a>
@@ -47,10 +58,12 @@
             <div class="dropdown">
                 <a href="contact.html"> <button class="style_button dropbtn">Contact</button></a>
             </div>
+            <button class="style_button dropbtn" id="buton_light_mode" onClick='schimb_mod()'>Light</button>
+
         </div>
 
         <div class="div_sigle">
-            <img class="sigla_pag" src="poze/sigla_biography.svg" alt="sigla_biography">
+            <img class="sigla_pag" id="sigla_biography" src="poze/sigla_biography.svg" alt="sigla_biography">
 
         </div>
     </div>
@@ -87,8 +100,8 @@
         <p>Richard Bachman a fost expus ca pseudonim al regelui de către un lucrător de librărie continuă din Washington, DC, Steve Brown, care a observat asemănări între lucrări și, ulterior, a înregistrat documentele editorului la Biblioteca Congresului,
             care l-a numit pe King drept autorul unuia dintre romanele lui Bachman. [46] Acest lucru a condus la un comunicat de presă care anunța „moartea” lui Bachman - supus „cancerului pseudonimului”. King a dedicat cartea sa din 1989 „ The Dark Half”
             , despre un pseudonim care se transformă pe un scriitor, „decedatului Richard Bachman”, iar în 1996, când a fost lansat romanul Stephen King, Desperation , romanul însoțitor The Regulators a purtat „Bachman”.</p>
-        <p>King a folosit alte pseudonime. Povestea scurtă „ Cel de-al cincilea sfert ” a fost publicată sub pseudonimul John Swithen (numele unui personaj din romanul Carrie ), de Cavalier în aprilie 1972. Povestea a fost reeditată în colecția King
-        Nightmares & Dreamscapes în 1993 sub nume propriu. În introducerea romanului Bachman Blaze , King susține, cu limbă în obraz, că „Bachman” era persoana care folosea pseudonimul Swithen.</p>
+        <p>King a folosit alte pseudonime. Povestea scurtă „ Cel de-al cincilea sfert ” a fost publicată sub pseudonimul John Swithen (numele unui personaj din romanul Carrie ), de Cavalier în aprilie 1972. Povestea a fost reeditată în colecția King Nightmares
+            & Dreamscapes în 1993 sub nume propriu. În introducerea romanului Bachman Blaze , King susține, cu limbă în obraz, că „Bachman” era persoana care folosea pseudonimul Swithen.</p>
         <p class="titlu_sectiuni" id="colaborari">Colaborări</p>
         <p>King a scris două romane cu romancierul de groază Peter Straub : Talismanul (1984) și o continuare, Casa Neagră (2001). King a indicat că el și Straub vor scrie probabil a treia carte finală din această serie, povestea lui Jack Sawyer, dar nu
             a stabilit niciun termen limită pentru finalizarea acesteia. </p>
@@ -117,4 +130,3 @@
 
 
 </html>
-

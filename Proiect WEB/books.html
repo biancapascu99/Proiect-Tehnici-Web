@@ -3,23 +3,35 @@
 
 <head>
     <title>Books </title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" id="id_mod">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="change_color.js"></script>
+
     <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1, user-scalable=no" /> -->
 </head>
 
-<body>
+<body onload="checkCookies()">
 
     <div class="header">
 
         <div class="title_box">
 
-            <a href="index.html"><img class="logo" src="poze/sigla.svg" alt="sigla">
+            <a href="index.html"><img class="logo" id="img_sigla" src="poze/sigla.svg" alt="sigla">
             </a>
 
         </div>
         <div class="menu">
+            <div class="dropdown">
+                <div>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="dropdown-content">
+                    <button class="style_button dropbtn" id="buton_light_mode" onClick='schimb_light()'>Light</button>
+                    <button class="style_button dropbtn" id="red_mode" onClick='schimb_red()'>Red</button>
+
+                </div>
+            </div>
             <div class="dropdown">
                 <div>
                     <a href="biography.html"><button class="style_button dropbtn">Biografie</button></a>
@@ -50,22 +62,23 @@
             <div class="dropdown">
                 <a href="contact.html"> <button class="style_button dropbtn">Contact</button></a>
             </div>
+
         </div>
 
         <div class="div_sigle">
-            <img class="sigla_pag" src="poze/sigla_books.svg" alt="sigla_books">
+            <img class="sigla_pag" id="sigla_books" src="poze/sigla_books.svg" alt="sigla_books">
         </div>
     </div>
 
     <div class="text_introducere">
-        <p>Moștenirea lui Stephen King ca scriitor de groază/ficțiune psihologică, best-seller este atribuită stilului său de scriere. Deoarece cititorii se pot identifica cu multe dintre personajele tridimensionale, dinamice ale lui
-            King, poveștile sale îi captivează și îi implică pe fanii săi fideli și cititorii pentru prima dată. De exemplu, protagonistul din „ Carrie ” este o fată de liceu ostracițată pentru că este diferită. Aproape toată lumea, la un moment dat în
-            adolescență, a cunoscut intepatura respingerii din partea semenilor sau a durerii profunde, psihice, de a suferi abuzuri emoționale repetate.</p>
+        <p>Moștenirea lui Stephen King ca scriitor de groază/ficțiune psihologică, best-seller este atribuită stilului său de scriere. Deoarece cititorii se pot identifica cu multe dintre personajele tridimensionale, dinamice ale lui King, poveștile sale
+            îi captivează și îi implică pe fanii săi fideli și cititorii pentru prima dată. De exemplu, protagonistul din „ Carrie ” este o fată de liceu ostracițată pentru că este diferită. Aproape toată lumea, la un moment dat în adolescență, a cunoscut
+            intepatura respingerii din partea semenilor sau a durerii profunde, psihice, de a suferi abuzuri emoționale repetate.</p>
         <p> King își înfrumusețează frecvent temele folosind o metaforă, un dispozitiv literar care compară doi subiecți aparent independenți, fără a implica în mod direct asocierea. </p>
-        <p> Rețeta lui King pentru a învăța să scrii bine este: "Citește și scrie patru până la șase ore pe zi. Dacă nu găsești timpul pentru asta, nu te poți aștepta să devii un scriitor bun." El își stabilește în fiecare zi o cotă de
-            2000 de cuvinte și nu se oprește din scris până nu o atinge. De asemenea, el are o definiție simplă pentru scris: "Formula lui King pentru a învăța să scrii bine este: "Citește și scrie patru până la șase ore pe zi. Dacă nu găsești timpul
-            pentru asta, nu te poți aștepta să devii un scriitor bun." El își stabilește în fiecare zi o cotă de 2000 de cuvinte și nu va opri scrierea până nu va fi întâlnit. De asemenea, el are o definiție simplă pentru talent în scris: "Dacă ați scris
-            ceva pentru care cineva v-a trimis un cec, dacă ați încasat cecul și acesta nu a sărit, iar dacă ați plătit factura ușoară cu banii, consider ai talentat." </p>
+        <p> Rețeta lui King pentru a învăța să scrii bine este: "Citește și scrie patru până la șase ore pe zi. Dacă nu găsești timpul pentru asta, nu te poți aștepta să devii un scriitor bun." El își stabilește în fiecare zi o cotă de 2000 de cuvinte și
+            nu se oprește din scris până nu o atinge. De asemenea, el are o definiție simplă pentru scris: "Formula lui King pentru a învăța să scrii bine este: "Citește și scrie patru până la șase ore pe zi. Dacă nu găsești timpul pentru asta, nu te
+            poți aștepta să devii un scriitor bun." El își stabilește în fiecare zi o cotă de 2000 de cuvinte și nu va opri scrierea până nu va fi întâlnit. De asemenea, el are o definiție simplă pentru talent în scris: "Dacă ați scris ceva pentru care
+            cineva v-a trimis un cec, dacă ați încasat cecul și acesta nu a sărit, iar dacă ați plătit factura ușoară cu banii, consider ai talentat." </p>
     </div>
 
 
@@ -212,7 +225,7 @@
     </div>
 
 
-    <div class="the_dark_tower" id="tower">
+    <section class="the_dark_tower" id="tower">
 
         <p class="titlu_sectiuni">The Dark Tower</p>
 
@@ -313,9 +326,9 @@
 
         </div>
 
-    </div>
+    </section>
 
-    <div class="the_dark_tower" id="mile">
+    <section class="the_dark_tower" id="mile">
 
         <p class="titlu_sectiuni">The Green Mile</p>
 
@@ -402,7 +415,7 @@
 
         </div>
 
-    </div>
+    </section>
     <footer>
         <div class="social">
             <i class="fa fa-instagram">&nbsp; <a href="https://www.instagram.com/stephenking/?hl=ro" target="_blank" class="link">stephenking</a>&emsp;&emsp;&emsp;&emsp;</i>

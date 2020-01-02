@@ -3,27 +3,37 @@
 
 <head>
     <title>Index </title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css" id="id_mod">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="change_color.js"></script>
 </head>
 
-<body>
+<body onload="checkCookies()">
 
     <div class="header">
 
         <div class="title_box">
 
-            <a href="index.html"><img class="logo" src="poze/sigla.svg" alt="sigla">
+            <a href="index.html"><img class="logo" id="img_sigla" src="poze/sigla.svg" alt="sigla">
             </a>
 
         </div>
-        <div class="menu">
+
+        <div class="menu" id="myMenu">
             <div class="dropdown">
                 <div>
-                    <a href="biography.html"><button class="style_button dropbtn">Biografie</button></a>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="dropdown-content">
+                    <button class="style_button dropbtn" id="buton_light_mode" onClick='schimb_light()'>Light</button>
+                    <button class="style_button dropbtn" id="red_mode" onClick='schimb_red()'>Red</button>
+
+                </div>
+            </div>
+            <div class="dropdown">
+                <div>
+                    <button class="style_button dropbtn">Biografie</button>
                     <i class="fa fa-caret-down"></i>
                 </div>
                 <div class="dropdown-content">
@@ -33,8 +43,8 @@
                 </div>
             </div>
             <div class="dropdown">
-                <div class="sageata">
-                    <a href="books.html"><button class="style_button dropbtn" >Cărți</button></a>
+                <div>
+                    <button class="style_button dropbtn">Cărți</button>
                     <i class="fa fa-caret-down"></i>
                 </div>
                 <div class="dropdown-content">
@@ -49,25 +59,57 @@
             </div>
             <div class="dropdown">
                 <a href="contact.html"> <button class="style_button dropbtn">Contact</button></a>
+
+            </div>
+            <!-- <button onclick="document.getElementById('id01').style.display='block'" class="style_button dropbtn">Login</button> -->
+
+            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+            <div id="id01" class="modal">
+
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="uname" required>
+
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+
+                        <button type="submit">Login</button>
+                        <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                        <span class="psw">Forgot <a href="#">password?</a></span>
+                    </div>
+                </form>
             </div>
         </div>
 
 
 
 
-        <div class="div_img_stephen">
-            <img src="poze/Stephen-King.jpg" class="img_stephen" alt="Stephen-King">
-            <div class="quotes_stephen">
+        <div class="div_img_stephen ">
+            <img src="poze/Stephen-King.jpg " class="img_stephen " alt="Stephen-King ">
+            <div class="quotes_stephen ">
                 <p>“Books are a uniquely portable magic.”</p>
-                <p class="text_autor">Stephen-King</p>
+                <p class="text_autor ">Stephen-King</p>
             </div>
         </div>
     </div>
-    <div class="div_home">
+    <div class="div_home ">
 
-        <p class="text_rubrica">Biografie</p>
+        <p class="text_rubrica ">Biografie</p>
 
-        <div class="home_paragraph">
+        <div class="home_paragraph ">
 
             <p> &emsp; &emsp;Stephen Edwin King (născut la 21 septembrie 1947) este un autor american de romane horror , ficțiune supranaturală , suspans și romane fantastice. Cărțile sale au vândut peste 350 de milioane de exemplare, multe dintre ele fiind
                 adaptate în lungmetraje, miniserie, seriale de televiziune și benzi desenate. King a publicat 61 de romane (dintre care șapte sub pseudonimul Richard Bachman ) și șase cărți de non-ficțiune. A scris aproximativ 200 de povestiri, majoritatea
@@ -79,12 +121,12 @@
             </p>
 
         </div>
-        <a href="biography.html"><button class="view_button">Vezi mai mult</button></a>
+        <a href="biography.html "><button class="view_button ">Vezi mai mult</button></a>
     </div>
-    <div class="div_home">
-        <p class="text_rubrica">Cărți</p>
+    <div class="div_home ">
+        <p class="text_rubrica ">Cărți</p>
 
-        <div class="home_paragraph">
+        <div class="home_paragraph ">
 
             <p> &emsp; &emsp;Moștenirea lui Stephen King ca scriitor de groază / ficțiune psihologică best-seller este atribuită stilului său de scriere. Deoarece cititorii se pot identifica cu multe dintre personajele tridimensionale, dinamice ale lui King,
                 poveștile sale îi captivează și îi implică pe fanii săi fideli și cititorii pentru prima dată. De exemplu, protagonistul din „ Carrie ” este o fată de liceu, judevată pentru că este diferită. Aproape toată lumea, la un moment dat în adolescență,
@@ -92,13 +134,13 @@
             <p>
                 &emsp; &emsp;King își înfrumusețează frecvent temele folosind metafora, un dispozitiv literar care compară doi subiecți aparent independenți, fără a implica în mod direct asocierea. </p>
         </div>
-        <a href="books.html"><button class="view_button">Vezi mai mult</button></a>
+        <a href="books.html "><button class="view_button ">Vezi mai mult</button></a>
 
     </div>
-    <div class="div_home">
-        <p class="text_rubrica">Filme</p>
+    <div class="div_home ">
+        <p class="text_rubrica ">Filme</p>
 
-        <div class="home_paragraph">
+        <div class="home_paragraph ">
 
             <p> &emsp; &emsp;Stephen-King a scris 61 de romane și aproximativ 200 de nuvele - multe dintre acestea au fost transformate în filme, emisiuni TV sau mini serie. Cu toții îi cunoaștem reperele, de la telepatii de zi cu zi, la mașini simțitoare,
                 la adolescenți care caută o evadare din liceu prin mijloace fantastice. Scriitorii singuratici, bărbații din umbră în negru, puștii, nobilii, cei din afară, grupurile de copii nedoriți - îi cunoaștem și îi iubim pe toți acești oameni care
@@ -106,17 +148,17 @@
                 cu toții speriați - poate nu de fantome în special - ci de ororile cotidiene ale lumii reale. King doar le amplifică și ne ajută să le înțelegem în felul său. </p>
 
         </div>
-        <a href="movies.html"><button class="view_button">Vezi mai mult</button></a>
+        <a href="movies.html "><button class="view_button ">Vezi mai mult</button></a>
 
     </div>
     <footer>
-        <div class="social">
-            <i class="fa fa-instagram">&nbsp; <a href="https://www.instagram.com/stephenking/?hl=ro" target="_blank" class="link">stephenking</a>&emsp;&emsp;&emsp;&nbsp;&nbsp;</i>
-            <i class="fa fa-facebook-square">&nbsp; <a href="https://www.facebook.com/OfficialStephenKing/" target="_blank" class="link">Stephen King</a>&emsp;&emsp;&emsp;</i>
-            <i class="fa fa-twitter">&nbsp;<a href="https://twitter.com/stephenking" target="_blank" class="link">Stephen King</a>&emsp;&emsp;&emsp;</i>
+        <div class="social ">
+            <i class="fa fa-instagram ">&nbsp; <a href="https://www.instagram.com/stephenking/?hl=ro " target="_blank " class="link ">stephenking</a>&emsp;&emsp;&emsp;&nbsp;&nbsp;</i>
+            <i class="fa fa-facebook-square ">&nbsp; <a href="https://www.facebook.com/OfficialStephenKing/ " target="_blank " class="link ">Stephen King</a>&emsp;&emsp;&emsp;</i>
+            <i class="fa fa-twitter ">&nbsp;<a href="https://twitter.com/stephenking " target="_blank " class="link ">Stephen King</a>&emsp;&emsp;&emsp;</i>
         </div>
 
-        <div class="text_footer">
+        <div class="text_footer ">
             <p>© 2019 SKing | All Rights Reserved.</p>
         </div>
 
