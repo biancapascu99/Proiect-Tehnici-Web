@@ -21,20 +21,52 @@
 
         </div>
         <div class="menu">
+            <button onclick="document.getElementById('id01').style.display='block'" class="style_button dropbtn"><i class="fa fa-user-circle-o"></i></button>
+            <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+
+            <div id="id01" class="modal">
+
+                <form class="modal-content animate" action="/action_page.php" method="post">
+                    <div class="imgcontainer">
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <img src="img_avatar.png" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div class="container">
+                        <label for="uname"><b>Nume utilizator</b></label>
+                        <input type="text" placeholder="Introduceți numele de utilizator" name="uname" required>
+
+                        <label for="psw"><b>Parola</b></label>
+                        <input type="password" placeholder="Introduceți parola" name="psw" required>
+
+                        <button type="submit">Autentificare</button>
+                        <label>
+                <input type="checkbox" checked="checked" name="remember">Ține-mă minte
+              </label>
+                    </div>
+
+                    <div class="container" style="background-color:#f1f1f1">
+                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Renunță</button>
+                        <span class="psw">Ai uitat <a href="#">parola</a>?</span>
+                    </div>
+                </form>
+            </div>
             <div class="dropdown">
                 <div>
-                    <i class="fas fa-heart"></i>
+                    <button class="style_button dropbtn"><i class="	fa fa-paint-brush"></i></button>
                 </div>
                 <div class="dropdown-content">
-                    <button class="style_button dropbtn" id="buton_light_mode" onClick='schimb_light()'>Light</button>
-                    <button class="style_button dropbtn" id="red_mode" onClick='schimb_red()'>Red</button>
+                    <a href id="buton_light_mode" onClick='schimb_light()'>Peach</a>
+                    <a href id="red_mode" onClick='schimb_red()'>Red Apple</a>
+                    <a href id="dark_mode" onClick='schimb_dark()'>Cranberries</a>
+
 
                 </div>
             </div>
             <div class="dropdown">
                 <div>
-                    <a href="biography.html"><button class="style_button dropbtn">Biografie</button></a>
-                    <i class="fa fa-caret-down"></i>
+                    <a href="biography.html"><button class="style_button dropbtn">Biografie <i id="sageata" class="fa fa-caret-down"></i></button></a>
+
                 </div>
                 <div class="dropdown-content">
                     <a href="biography.html#tinerete">Tinerețe</a>
@@ -44,8 +76,8 @@
             </div>
             <div class="dropdown">
                 <div>
-                    <a href="books.html"><button class="style_button dropbtn">Cărți</button></a>
-                    <i class="fa fa-caret-down"></i>
+                    <a href="books.html"><button class="style_button dropbtn">Cărți <i id="sageata" class="fa fa-caret-down"></i></button></a>
+
                 </div>
                 <div class="dropdown-content">
                     <a href="books.html#all">Toate cărțile</a>
@@ -80,6 +112,7 @@
             <iframe class="video" src="https://www.youtube.com/embed/GjwfqXTebIY">
           </iframe>
         </div>
+        <button id="myBtn" class="style_button dropbtn" onclick="topFunction()" title="Go to top"><i class="fa fa-arrow-up"></i class="style_button dropbtn"></button>
 
 
         <a class="info" href="https://ro.wikipedia.org/wiki/Turnul_%C3%AEntunecat_(film)" target="_blank">Mai multe informații despre film</a>

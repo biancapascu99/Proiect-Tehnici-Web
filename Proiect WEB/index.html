@@ -17,24 +17,59 @@
 
             <a href="index.html"><img class="logo" id="img_sigla" src="poze/sigla.svg" alt="sigla">
             </a>
+            <!-- <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a> -->
 
         </div>
 
         <div class="menu" id="myMenu">
             <div class="dropdown">
-                <div>
-                    <i class="fas fa-heart"></i>
+                <button onclick="document.getElementById('id01').style.display='block'" class="style_button dropbtn"><i class="fa fa-user-circle-o"></i></button>
+                <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> -->
+
+                <div id="id01" class="modal">
+
+                    <form class="modal-content animate" action="/action_page.php" method="post">
+                        <div class="imgcontainer">
+                            <span onclick="onClickCancel()" class="close" title="Close Modal">&times;</span>
+                            <img src="img_avatar.png" alt="Avatar" class="avatar">
+                        </div>
+
+                        <div class="container">
+                            <label for="uname"><b>Nume utilizator</b></label>
+                            <input id="usernameID" type="text" placeholder="Introduceți numele de utilizator" name="uname" required>
+
+                            <label for="psw"><b>Parola</b></label>
+                            <input id="passwordID" type="password" placeholder="Introduceți parola" name="psw" required>
+
+                            <button type="button">Autentificare</button>
+                            <label>
+                <input type="checkbox" checked="checked" name="remember">Ține-mă minte
+              </label>
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button" onclick="onClickCancel()" class="cancelbtn">Renunță</button>
+                            <span class="psw">Ai uitat <a href="#">parola</a>?</span>
+                        </div>
+                    </form>
                 </div>
-                <div class="dropdown-content">
-                    <button class="style_button dropbtn" id="buton_light_mode" onClick='schimb_light()'>Light</button>
-                    <button class="style_button dropbtn" id="red_mode" onClick='schimb_red()'>Red</button>
+            </div>
+            <div class="dropdown">
+                <div>
+                    <button onclick="Drop_teme()" class="style_button dropbtn">   <i class="fa fa-paint-brush"></i></button>
+                </div>
+                <div class="dropdown-content" id="myDropdown">
+                    <a href id="buton_light_mode" onClick='schimb_light()'>Peach</a>
+                    <a href id="red_mode" onClick='schimb_red()'>Red Apple</a>
+                    <a href id="dark_mode" onClick='schimb_dark()'>Cranberries</a>
+
 
                 </div>
             </div>
             <div class="dropdown">
                 <div>
-                    <button class="style_button dropbtn">Biografie</button>
-                    <i class="fa fa-caret-down"></i>
+                    <a href="biography.html"> <button class="style_button dropbtn">Biografie  <i id="sageata" class="fa fa-caret-down"></i></button></a>
+
                 </div>
                 <div class="dropdown-content">
                     <a href="biography.html#tinerete">Tinerețe</a>
@@ -44,8 +79,8 @@
             </div>
             <div class="dropdown">
                 <div>
-                    <button class="style_button dropbtn">Cărți</button>
-                    <i class="fa fa-caret-down"></i>
+                    <a href="books.html"> <button class="style_button dropbtn">Cărți <i id="sageata" class="fa fa-caret-down"></i></button></a>
+
                 </div>
                 <div class="dropdown-content">
                     <a href="books.html#all">Toate cărțile</a>
@@ -61,50 +96,22 @@
                 <a href="contact.html"> <button class="style_button dropbtn">Contact</button></a>
 
             </div>
-            <!-- <button onclick="document.getElementById('id01').style.display='block'" class="style_button dropbtn">Login</button> -->
 
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 
-            <div id="id01" class="modal">
-
-                <form class="modal-content animate" action="/action_page.php" method="post">
-                    <div class="imgcontainer">
-                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                        <img src="img_avatar2.png" alt="Avatar" class="avatar">
-                    </div>
-
-                    <div class="container">
-                        <label for="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" name="uname" required>
-
-                        <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" name="psw" required>
-
-                        <button type="submit">Login</button>
-                        <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
-                    </div>
-
-                    <div class="container" style="background-color:#f1f1f1">
-                        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                        <span class="psw">Forgot <a href="#">password?</a></span>
-                    </div>
-                </form>
-            </div>
         </div>
 
-
-
+        <button id="myBtn" class="style_button dropbtn" onclick="topFunction()" title="Go to top"><i class="fa fa-arrow-up"></i class="style_button dropbtn"></button>
 
         <div class="div_img_stephen ">
-            <img src="poze/Stephen-King.jpg " class="img_stephen " alt="Stephen-King ">
+
+            <div class="shrink"><img src="poze/Stephen-King.jpg " class="img_stephen " alt="Stephen-King "></div>
             <div class="quotes_stephen ">
                 <p>“Books are a uniquely portable magic.”</p>
                 <p class="text_autor ">Stephen-King</p>
             </div>
         </div>
     </div>
+
     <div class="div_home ">
 
         <p class="text_rubrica ">Biografie</p>
@@ -150,7 +157,10 @@
         </div>
         <a href="movies.html "><button class="view_button ">Vezi mai mult</button></a>
 
+
+
     </div>
+
     <footer>
         <div class="social ">
             <i class="fa fa-instagram ">&nbsp; <a href="https://www.instagram.com/stephenking/?hl=ro " target="_blank " class="link ">stephenking</a>&emsp;&emsp;&emsp;&nbsp;&nbsp;</i>
