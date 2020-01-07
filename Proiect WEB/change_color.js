@@ -119,3 +119,34 @@ window.onclick = function(event) {
         }
     }
 }
+
+
+
+//post comment
+
+function sendComment() {
+    let comment = document.getElementById('comment').value;
+
+    fetch("http://localhost:3000", {
+        method: 'POST',
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+            'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *client
+        body: JSON.stringify({ comment: comment })
+    }).then((data) => {
+        return data.json()
+    }).then((json) => {
+        if (json.Status === 'OK') {
+            alert("Mesajul a fost trimis")
+        } else {
+            alert("Mesajul nu a fost trimis")
+        }
+        console.log(json);
+    })
+}
