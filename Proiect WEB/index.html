@@ -157,12 +157,20 @@
         <a href="movies.html "><button class="view_button ">Vezi mai mult</button></a>
 
 
+    </div>
 
-    </div>
-    <div id="rubrica_comentarii">
-        <textarea id='comment' class="com"> </textarea>
-        <input type='button' value="Send" onclick="sendComment()">
-    </div>
+    <p class="glow">Secțiune comentarii</p>
+
+    <center>
+        <div>
+            <!-- <textarea id='comment' class="com"> </textarea><br> -->
+            <input id='comment' class="com" placeholder="Introduceți comentariul"><br><br>
+            <button class="button_send" onclick="sendComment()">Trimite</button>
+            <div id="rubrica_comentarii">
+                <ul class="comentarii"></ul>
+            </div>
+        </div>
+    </center>
 
 
     <footer>

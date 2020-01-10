@@ -59,6 +59,7 @@
     button:hover {
         background-color: #ebd5d5;
         color: #ea8a8a;
+        border-color: #ebd5d5;
         /* /* border-radius: 12px; */
     }
     .dropdown-content a:hover {
@@ -409,7 +410,7 @@ button:hover {
 
 li:nth-child(even) {
     padding: 10px;
-    color: #f9f9f9;
+    color: #888;
 }
 
 li:nth-child(odd) {
@@ -966,4 +967,50 @@ span.psw {
     -ms-transform: scale(0.8);
     transform: scale(0.8);
     transition: 1s ease;
+}
+
+.com {
+    width: 50%;
+    padding: 10px;
+    /* margin-top: 10%; */
+    border-radius: 20px;
+    font-size: 17px;
+    /* margin-left: 35%; */
+    box-shadow: 0px 8px 10px 0px gray;
+    /* display: inline; */
+}
+
+#rubrica_comentarii {
+    font-size: 20px;
+    text-align: center;
+}
+
+.button_send {
+    background-color: #ebd5d5;
+    /* border: white; */
+    color: #685454;
+    text-align: center;
+    width: 10%;
+    border-color: #685454;
+    font: courier;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 8px 10px;
+    /* margin-left: 40%; */
+    padding: 8px;
+    border-radius: 70px;
+    cursor: pointer;
+    align-self: center;
+    cursor: pointer;
+    box-shadow: 0px 8px 10px 0px gray inset;
+}
+
+.comentarii {
+    font-size: 25px;
+    /* padding-left: 60px; */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    column-count: 1;
+    -webkit-column-count: 1;
+    list-style-type: none;
 }

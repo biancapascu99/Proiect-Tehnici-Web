@@ -57,6 +57,7 @@
         button:hover {
             background-color: #333;
             color: #e559d2;
+            border-color: #e559d2;
         }
         .dropdown-content a:hover {
             color: #e559d2;
@@ -778,6 +779,26 @@
             padding: 8px;
             /* margin-left: 70px; */
         }
+        .button_send {
+            background-color: #333;
+            width: 30%;
+            /* border: white; */
+            border-color: #27b5b5;
+            color: #27b5b5;
+            text-align: center;
+            font: courier;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 8px 10px;
+            /* margin-left: 40%; */
+            padding: 8px;
+            border-radius: 70px;
+            cursor: pointer;
+            align-self: center;
+            cursor: pointer;
+            box-shadow: 0px 8px 10px 0px black inset;
+        }
     }
     
     @media (max-width:800px) {
@@ -1034,5 +1055,47 @@
     }
     
     .com {
-        width: 30%;
+        width: 50%;
+        padding: 10px;
+        /* margin-top: 10%; */
+        border-radius: 20px;
+        font-size: 17px;
+        /* margin-left: 35%; */
+        box-shadow: 0px 8px 10px 0px black;
+        /* display: inline; */
+    }
+    
+    #rubrica_comentarii {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .button_send {
+        background-color: #333;
+        width: 140px;
+        /* border: white; */
+        border-color: #27b5b5;
+        color: #27b5b5;
+        text-align: center;
+        font: courier;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 8px 10px;
+        /* margin-left: 40%; */
+        padding: 8px;
+        border-radius: 70px;
+        cursor: pointer;
+        align-self: center;
+        cursor: pointer;
+        box-shadow: 0px 8px 10px 0px black inset;
+    }
+    
+    .comentarii {
+        font-size: 25px;
+        /* padding-left: 60px; */
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        /* column-count: 1;
+        -webkit-column-count: 1; */
+        list-style-type: none;
     }

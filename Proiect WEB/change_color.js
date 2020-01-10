@@ -46,6 +46,7 @@ function checkCookies() {
     if (mode === "style.css") {
         schimb_dark();
     }
+    showComment();
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -93,11 +94,14 @@ function topFunction() {
 
 function alertMail() {
     var myVar;
+
     myVar = setTimeout(alertFunc, 1000);
+
 }
 
 function alertFunc() {
     alert("Ați fost adaugat in lista de abonați.");
+    document.getElementById("box_mail").value = "";
 }
 
 //dropdown teme
@@ -143,10 +147,35 @@ function sendComment() {
         return data.json()
     }).then((json) => {
         if (json.Status === 'OK') {
-            alert("Mesajul a fost trimis")
+            document.getElementById("rubrica_comentarii").children[0].innerHTML = "<li>" + json.lastComment.comment + "</li>" + document.getElementById("rubrica_comentarii").children[0].innerHTML;
+            document.getElementById("comment").value = "";
         } else {
             alert("Mesajul nu a fost trimis")
         }
         console.log(json);
+    })
+}
+//get comment
+
+function showComment() {
+
+    fetch("http://localhost:3000", {
+        method: 'GET',
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+            'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *client
+    }).then((data) => {
+        return data.json()
+    }).then((json) => {
+        for (var i = 0; i < json.comments.length; i++)
+            document.getElementById("rubrica_comentarii").children[0].innerHTML += "<li>" + json.comments[i].comment + "</li>";
+        console.log(json);
+
     })
 }

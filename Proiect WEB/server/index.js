@@ -14,11 +14,19 @@ app.use(function(req, res, next) {
     next();
 });
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => {
+
+    fs.readFile('stocare_comentarii.json', (err, data) => {
+        if (err) throw err;
+        let comments = JSON.parse(data);
+        console.log(comments);
+        res.send(comments);
+    });
+})
 
 app.post('/', (req, res) => {
     console.log(req.body);
-    commentsArray.push(req.body);
+    commentsArray.unshift(req.body);
     var stringReq = JSON.stringify(commentsFile);
 
     fs.writeFile("stocare_comentarii.json", stringReq, 'utf8', function(err) {
@@ -28,7 +36,7 @@ app.post('/', (req, res) => {
         }
 
         console.log("JSON file has been saved.");
-        res.send({ Status: 'OK' });
+        res.send({ Status: 'OK', lastComment: req.body });
     });
 })
 
