@@ -1017,3 +1017,15 @@ span.psw {
     -webkit-column-count: 1;
     list-style-type: none;
 }
+
+.caseta_com:nth-child(even) {
+    background-color: #900c3f;
+    border-radius: 50px;
+    border: 3px solid #ffc300;
+}
+
+.caseta_com:nth-child(odd) {
+    background-color: #900c3f;
+    border-radius: 50px;
+    border: 3px solid #f44336;
+}

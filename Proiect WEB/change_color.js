@@ -36,6 +36,10 @@ function schimb_dark() {
 }
 
 function checkCookies() {
+    if (localStorage.commentsCount === undefined) {
+        localStorage.commentsCount = 0;
+    }
+    console.log(localStorage.commentsCount);
     var mode = localStorage.tema;
     if (mode === "style_red.css") {
         schimb_red();
@@ -142,12 +146,17 @@ function sendComment() {
         },
         redirect: 'follow', // manual, *follow, error
         referrerPolicy: 'no-referrer', // no-referrer, *client
-        body: JSON.stringify({ comment: comment })
+        body: JSON.stringify({ comment: comment, id: localStorage.commentsCount })
     }).then((data) => {
+        localStorage.commentsCount++;
         return data.json()
     }).then((json) => {
         if (json.Status === 'OK') {
-            document.getElementById("rubrica_comentarii").children[0].innerHTML = "<li>" + json.lastComment.comment + "</li>" + document.getElementById("rubrica_comentarii").children[0].innerHTML;
+            document.getElementById("rubrica_comentarii").children[0].innerHTML =
+                '<li class="caseta_com">' + json.lastComment.comment + ' <span class="material-icons" id="idCom' + json.lastComment.id + '" onclick="deleteCom(' + json.lastComment.id + ')">delete_forever</span>  </li>'
+                //"<li>" + json.lastComment.comment + "</li>"
+                +
+                document.getElementById("rubrica_comentarii").children[0].innerHTML;
             document.getElementById("comment").value = "";
         } else {
             alert("Mesajul nu a fost trimis")
@@ -174,8 +183,39 @@ function showComment() {
         return data.json()
     }).then((json) => {
         for (var i = 0; i < json.comments.length; i++)
-            document.getElementById("rubrica_comentarii").children[0].innerHTML += "<li>" + json.comments[i].comment + "</li>";
+            document.getElementById("rubrica_comentarii").children[0].innerHTML +=
+            '<li class="caseta_com">' + json.comments[i].comment + ' <span class="material-icons"id="idCom' + json.comments[i].id + '" onclick="deleteCom(' + json.comments[i].id + ')">delete_forever</span>  </li>';
         console.log(json);
 
     })
+}
+
+function deleteCom(butonId) {
+    console.log(butonId);
+
+    fetch("http://localhost:3000/delete", {
+        method: 'POST',
+        mode: 'cors', // no-cors, *cors, same-origin
+        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+        credentials: 'same-origin', // include, *same-origin, omit
+        headers: {
+            'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        redirect: 'follow', // manual, *follow, error
+        referrerPolicy: 'no-referrer', // no-referrer, *client
+        body: JSON.stringify({ id: butonId })
+    }).then((data) => {
+        return data.json()
+    }).then((json) => {
+        console.log(json);
+        console.log("CE PRIMIM", json);
+        document.getElementById("rubrica_comentarii").children[0].innerHTML = '';
+        for (var i = 0; i < json.comments.length; i++)
+            document.getElementById("rubrica_comentarii").children[0].innerHTML +=
+            '<li class="caseta_com">' + json.comments[i].comment + ' <span class="material-icons" id="idCom' + json.comments[i].id + '" onclick="deleteCom(' + json.comments[i].id + ')">delete_forever</span>  </li>';
+        console.log(json);
+
+    })
+
 }

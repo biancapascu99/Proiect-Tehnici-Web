@@ -40,4 +40,32 @@ app.post('/', (req, res) => {
     });
 })
 
+app.post('/delete', (req, res) => {
+    console.log("ID de sters", req.body);
+    var stringReq = commentsFile;
+    console.log(stringReq, "STRIG REQ")
+    for (var i = 0; i < stringReq.comments.length; i++) {
+        console.log(req.body.id, " ", stringReq.comments[i].id);
+        if (req.body.id == stringReq.comments[i].id) {
+            console.log("da");
+            var deSters = i;
+            break;
+        }
+    }
+    stringReq.comments.splice(deSters, 1);
+
+    var stringReqText = JSON.stringify(stringReq);
+    console.log(22222222, stringReqText)
+
+    fs.writeFile("stocare_comentarii.json", stringReqText, 'utf8', function(err) {
+        if (err) {
+            console.log("An error occured while writing JSON Object to File.");
+            return console.log(err);
+        }
+
+        console.log("JSON file has been saved.");
+        res.send({ Status: 'OK', comments: stringReq.comments });
+    });
+})
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
